@@ -7,15 +7,17 @@ pipeline {
                 checkout scm
             }
         }
+
+        stage('Build') {
+                        steps {
+                            script {
+                                // Compilation du projet avec Maven
+                                sh 'mvn clean install'
+                            }
+                        }
+                    }
     }
 
-    stage('Build') {
-                steps {
-                    script {
-                        // Compilation du projet avec Maven
-                        sh 'mvn clean install'
-                    }
-                }
-            }
+
 
 }
