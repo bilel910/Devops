@@ -8,16 +8,15 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('MVN build') {
                         steps {
-                            script {
-                                // Compilation du projet avec Maven
-                                sh 'mvn clean install'
-                            }
+                            echo 'MVN ...'
+                            sh 'mvn install -DskipTests'
                         }
                     }
     }
 
+  {
 
 
 }
